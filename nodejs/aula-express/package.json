@@ -1,0 +1,22 @@
+{
+  "name": "aula-express",
+  "version": "0.0.1",
+  "description": "Aula sobre Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "Node",
+    "MEAN",
+    "Webschool"
+  ],
+  "author": "Guilherme Costa",
+  "license": "WTFPL",
+  "dependencies": {
+    "express": "^4.14.0",
+    "formidable": "^1.0.17",
+    "jade": "^1.11.0"
+  }
+}

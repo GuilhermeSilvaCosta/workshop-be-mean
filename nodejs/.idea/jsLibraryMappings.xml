@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/aula-express" libraries="{nodejs/aula-express/node_modules}" />
+    <file url="file://$PROJECT_DIR$/aula-tdd/chai" libraries="{nodejs/aula-tdd/chai/node_modules}" />
+    <file url="file://$PROJECT_DIR$/aula-tdd/validate" libraries="{nodejs/aula-tdd/validate/node_modules}" />
+    <file url="file://$PROJECT_DIR$/mongoose-atomic" libraries="{nodejs/mongoose-atomic/node_modules}" />
+    <file url="file://$PROJECT_DIR$/mongoose-atomic-design" libraries="{nodejs/mongoose-atomic-design/node_modules}" />
+    <file url="file://$PROJECT_DIR$/mongoose-pokemons" libraries="{nodejs/mongoose-pokemons/node_modules}" />
+    <file url="file://$PROJECT_DIR$/mongoose-user" libraries="{nodejs/mongoose-user/node_modules}" />
+    <file url="file://$PROJECT_DIR$/pokemons-api" libraries="{nodejs/pokemons-api/node_modules}" />
+  </component>
+</project>

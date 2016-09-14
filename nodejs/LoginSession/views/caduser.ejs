@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include includes/head %>
+  <body>
+      <form action="caduser" method="Post" class="col s6">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="email" class="active">Email</label>
+            <input type="email" name="email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="password" class="active">Pass</label>
+            <input type="password" name="password">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="password2" class="active">Pass 2</label>
+            <input type="password" name="password2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light">
+               <i class="material-icons right">send</i>
+            </button>
+            <a class="btn waves-effect waves-light" href="/">
+               <i class="material-icons right">back</i>
+            </a>
+          </div>
+        </div>
+        <% if (typeof err !== 'undefined') { %>
+           <span class="red"><%= err %></span>
+        <% } %>
+      </form>
+  </body>
+</html>

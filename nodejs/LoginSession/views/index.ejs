@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include includes/head %>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% include includes/logout %>
+    <% if (typeof user === 'undefined') { %>
+    <a href="login" class="waves-effect waves-light btn">
+      Login
+    </a>
+    <br />
+    <br />
+    <a href="caduser" class="waves-effect waves-light btn">
+      cadastro
+    </a>
+    <br />
+    <br />
+    <% } %>
+    <a href="restrict" class="waves-effect waves-light btn">
+      Veja O segrendo
+    </a>
+  </body>
+</html>
