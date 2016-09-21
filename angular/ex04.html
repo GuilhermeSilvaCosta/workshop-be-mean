@@ -2,13 +2,13 @@
 <html lang="en" data-ng-app="BeMEAN">
 <head>
     <meta charset="UTF-8">
-    <title>{{ titulo }}</title>
+    <title>{{ titulo | reverseString | uppercase }}</title>
 </head>
 <body>
     <label for="nome">Seu Nome:
         <input type="text" data-ng-model="nome">
     </label>
-    Olá mundo, {{ nome | lowercase }}
+    Olá mundo, {{ nome | reverseString | uppercase }}
 
     <label for="titulo">Seu titulo: 
         <input type="text" data-ng-model="titulo">
@@ -16,6 +16,11 @@
     <script src="angular.min.js"></script>
     <script>
         angular.module('BeMEAN', [])
+            .filter('reverseString', function(){
+                return function(text){
+                    if(text) return text.split("").reverse().join("");
+                }
+            });
     </script>
 </body>
 </html>

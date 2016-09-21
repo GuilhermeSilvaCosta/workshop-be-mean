@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="BeMEAN">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio aula 02</title>
+</head>
+<body>
+    <label for="exemplo1">Filtro Currency:
+        <input type="text" data-ng-model="exemplo1">
+    </label>
+    = {{ exemplo1 | currency }}
+    <br/>
+    <label for="exemplo2">Sou maior que 18 anos?
+        <input type="text" data-ng-model="exemplo2">
+    </label>
+    = {{exemplo2 | maiorDeIdade}}
+    <br/>
+    <label for="exemplo3">Me diga o horário para que eu possa cumprimentá-lo
+        <input type="time" data-ng-model="exemplo3">
+    </label>
+    = {{exemplo3 | cumprimento}}
+
+    <script src="angular.min.js"></script>
+    <script>
+        angular.module('BeMEAN', [])
+            .filter('maiorDeIdade', function(){
+                return function(text){
+                    if(isNaN(text)){
+                        text = 0;
+                    }
+                    if(text >= 18) return "SIM!";
+                    return "NÃO!";
+                };
+            })
+            .filter('cumprimento', function(){
+                return function(text){
+                    if(text){
+                        let hour = text.getHours();
+                        if (hour > 0 && hour < 12) return 'Bom dia.';
+                        else if(hour < 18) return 'Boa tarde.';
+                        else return 'Boa noite';                        
+                    }
+                }
+            });
+    </script>
+</body>
+</html>
