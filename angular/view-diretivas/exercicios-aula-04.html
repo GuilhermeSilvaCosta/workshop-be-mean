@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="BeMEAN">
+<head>
+    <meta charset="UTF-8">
+    <title>Be MEAN</title>
+</head>
+<body data-ng-controller="UserController as User">
+    <h1>{{ User.titulo }}</h1>
+    <label>Busca: <input ng-model="searchUser"></label>
+    <span data-ng-init="predicate='name'; reverse=fase"></span>
+    <table>
+        <thead>
+            <tr>
+                <th data-ng-repeat="(key, value) in User.users[0]">{{ key }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="user in User.users | orderBy:'age':reverse | 
+            filter:searchUser">
+                <td data-ng-repeat="(key, value) in user">{{ value }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+    <div data-ng-controller="CursoController as Curso">
+        <h2>{{ Curso.titulo }}</h2>
+        <label>Busca: <input ng-model="searchCurso"></label>
+        <ul>
+            <li data-ng-repeat="curso in Curso.cursos | orderBy:'workload' | filter:searchCurso">
+                {{ curso.name }} - {{ curso.teacher }} - {{ curso.workload }} horas.
+            </li>
+        </ul>
+    </div>
+
+    <script src="./../angular.min.js"></script>
+    <script>
+        angular.module('BeMEAN', [])
+            .controller('UserController', UserController)
+            .controller('CursoController', CursoController);
+
+        function UserController(){
+            var vm = this;
+            vm.titulo = "Be MEAN - Usuários";
+            vm.users = [
+                {name: 'Suissa', email: 'suissera@manoveio.com', age: 35}
+              , {name: 'João', email: 'joao@macioesedoso.com', age: 40}
+              , {name: 'Franciele', email: 'fran@quimica.com', age: 28}  
+            ];
+        }
+
+        function CursoController(){
+            var vm = this;
+            vm.titulo = "Be MEAN - Cursos";
+            vm.cursos = [
+                {name: 'Be MEAN', teacher: 'Suissa', workload: 180}
+              , {name: 'Learning Machine', teacher: 'Ivan Gustavo', workload: 140}
+              , {name: 'Laravel', teacher: 'Michael Douglas', workload: 220}  
+            ];
+        }        
+    </script>
+</body>
+</html>

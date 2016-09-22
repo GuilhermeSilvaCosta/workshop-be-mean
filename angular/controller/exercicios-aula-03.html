@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="BeMEAN">
+<head>
+    <meta charset="UTF-8">
+    <title>Be MEAN</title>
+</head>
+<body data-ng-controller="TeacherController as Teacher">
+    <h1>{{ Teacher.titulo }}</h1>
+
+    <ul>
+        <li data-ng-repeat="teacher in Teacher.teachers">
+            {{ teacher.name }} - {{ teacher.email }} - {{ teacher.sex | sexo }}
+        </li>
+    </ul>
+
+    <script src="./../angular.min.js"></script>
+    <script>
+        angular.module('BeMEAN', [])
+            .controller('TeacherController', TeacherController)
+            .filter('sexo', sexo);
+
+        function TeacherController(){
+            var vm = this;
+            vm.titulo = "Be MEAN - Professores";
+            vm.teachers = [
+                {name: 'Suissa', email: 'suissera@manoveio.com', sex: 'M'}
+              , {name: 'João', email: 'joao@macioesedoso.com', sex: 'M'}
+              , {name: 'Franciele', email: 'fran@quimica.com', sex: 'F'}  
+            ];
+        }
+
+        function sexo(){
+            return (sex) => {
+                if(sex == 'F'){
+                    return "Sexo: Feminino";
+                } else if(sex == 'M'){
+                    return "Sexo: Masculino";
+                }
+                return "";
+            }
+        }
+      
+    </script>
+</body>
+</html>
