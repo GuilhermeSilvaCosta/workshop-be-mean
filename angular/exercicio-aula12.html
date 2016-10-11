@@ -179,8 +179,12 @@
 
             vm.add = add; 
             function add(user){
-                vm.users.push(angular.copy(user));
-                vm.form = {};
+                if (vm.user.name.$valid){
+                    vm.users.push(angular.copy(user));
+                    vm.form = {};
+                } else {
+                    console.log("FUUUUDEU, DEU MERDA !!!");
+                }
             }
 
             vm.remove = remove; 
