@@ -21,7 +21,7 @@
                 <input type="checkbox" id="user-{{$index}}" ng-model="user.selecionado" />
                 <label for="user-{{$index}}"></label>
             </td>                    
-            <td><a href="#/users/{{$index}}">{{ user.name }}</a></td>
+            <td><a href="#/users/{{ user.email }}">{{ user.name }}</a></td>
             <td>{{ user.email }}</td>
             <td>
                 <button data-ng-click="User.edit(user, $index)" class="btn btn-large blue waves-effect

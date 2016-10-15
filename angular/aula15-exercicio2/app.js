@@ -6,7 +6,7 @@ angular.module('BeMEAN', ['ngAnimate','ngRoute'])
                 controller: 'UserController',
                 controllerAs: 'User'
             })
-            .when('/users/:id',{                
+            .when('/users/:email',{                
                 templateUrl: 'views/users-details.html',
                 controller: 'UserDetailsController',
                 controllerAs: 'UserDetails'

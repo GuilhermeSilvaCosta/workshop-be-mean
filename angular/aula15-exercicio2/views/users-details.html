@@ -1,0 +1,9 @@
+<h2>Dados do usuário</h2>
+<p>Buscar o user pelo email: {{ UserDetails.routeParams.email }}</p>
+<p class="card-panel" ng-repeat="user in UserDetails.users | filter:{email: UserDetails.routeParams.email }">
+	Nome: {{ user.name }}
+
+	<br>
+
+	Email: {{ user.email }}
+</p>
