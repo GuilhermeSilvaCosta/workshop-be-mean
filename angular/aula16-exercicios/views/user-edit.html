@@ -1,0 +1,14 @@
+<h3>Editing User - {{ UserDetails.users[UserDetails.routeParams.id].email }}</h3>
+
+
+
+<form name="User.userForm">
+    <label for="name">Nome: </label>
+    <input type="text" name="name" value="{{ UserDetails.users[UserDetails.routeParams.id].name }}">
+                                             
+
+    <br><br><br>
+
+    <label for="email">Email: </label>
+    <input type="email" name="email" value="{{ UserDetails.users[UserDetails.routeParams.id].email }}">
+</form>
